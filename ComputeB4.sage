@@ -1,14 +1,19 @@
 B = BraidGroup(4)
 
-def free_semigroup_ball(radius,rank):
+def free_semigroup_sphere(radius,rank):
   if radius == 0:
     return [[]]
   else:
-    ball = free_semigroup_ball(radius-1,rank)
-    for word in ball:      
-        sphere = [word.append(letter+1) for letter in range(rank)]
-    return ball + sphere
+    previous_sphere = free_semigroup_sphere(radius-1,rank)
+    for word in previous_sphere:
+        sphere = [word + [letter + 1] for letter in range(rank)]
+        return sphere
 
-free_semigroup_ball(1,1)
-free_semigroup_ball(2,1)
+def free_semigroup_ball(radius,rank):
+  ball = []
+  for r in range(radius):
+    ball.extend(free_semigroup_sphere(r+1,rank))
+  return ball 
+
+
   
