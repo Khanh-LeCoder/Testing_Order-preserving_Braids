@@ -28,4 +28,4 @@ def braid_semigroup_ball(radius,strands):
 for word in braid_semigroup_ball(3,4):
   B = BraidGroup(4)
   braid = B(word)
-  print(char_poly(braid.burau_matrix(var= 't',reduced =True)))
+  print("| ",braid," | ",braid.thurston_type()," | ",char_poly(braid.burau_matrix(var= 't',reduced =True))," |")
