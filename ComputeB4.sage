@@ -17,7 +17,7 @@ def braid_semigroup_ball(radius,strands):
   B = BraidGroup(strands)
   braid_ball = []
   element_set = set()
-  for word in free_semigroup_ball(radius,strands):
+  for word in free_semigroup_ball(radius,strands-1):
     lnf = B(word).left_normal_form()
     if lnf not in element_set:     
       element_set.add(lnf)
