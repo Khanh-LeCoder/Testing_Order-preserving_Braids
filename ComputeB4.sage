@@ -1,5 +1,3 @@
-B = BraidGroup(4)
-
 def free_semigroup_sphere(radius,rank):
   if radius == 0:
     return [[]]
@@ -15,5 +13,15 @@ def free_semigroup_ball(radius,rank):
     ball.extend(free_semigroup_sphere(r+1,rank))
   return ball 
 
-
+def braid_semigroup_ball(radius,strands):
+  B = BraidGroup(strands)
+  braid_ball = []
+  element_set = {}
+  for word in free_semigroup_ball(radius,strands):
+    lnf = B(word).left_normal_form()
+    if lnf not in element_set:     
+      element_set.add(lnf)
+      braid_ball.append(word)
+  return braid_ball
+  
   
