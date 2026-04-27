@@ -29,4 +29,5 @@ for word in braid_semigroup_ball(5,4):
   B = BraidGroup(4)
   braid = B(word)
   char = char_poly(braid.burau_matrix(var= 't',reduced =True))
-  print("| ",braid," | ",braid.thurston_type()," | ",char," | ",char.discriminant()," |")
+  d = char.discriminant()
+  print("| ",braid," | ",braid.thurston_type()," | ",char," | ",lowest_degree_coeff(d)," |")
