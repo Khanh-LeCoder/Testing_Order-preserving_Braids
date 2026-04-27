@@ -3,6 +3,7 @@ def free_semigroup_sphere(radius,rank):
     return [[]]
   else:
     previous_sphere = free_semigroup_sphere(radius-1,rank)
+    new_sphere = []
     for word in previous_sphere:
         new_sphere.extend([word + [letter + 1] for letter in range(rank)])
         return new_sphere
