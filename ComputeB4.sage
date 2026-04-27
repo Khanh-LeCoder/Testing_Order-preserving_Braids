@@ -25,9 +25,17 @@ def braid_semigroup_ball(radius,strands):
       braid_ball.append(word)
   return braid_ball
 
-for word in braid_semigroup_ball(5,4):
+count_pos = 0
+count_neg = 0
+for word in braid_semigroup_ball(8,4):
   B = BraidGroup(4)
   braid = B(word)
   char = char_poly(braid.burau_matrix(var= 't',reduced =True))
   d = char.discriminant()
-  print("| ",braid," | ",braid.thurston_type()," | ",char," | ",lowest_degree_coeff(d)," |")
+  ldc = lowest_deg_coeff(d)
+  if ldc > 0 or ldc == 0:
+    count_pos += 1
+  else:
+    count_neg += 1
+  print("| ",braid," | ",braid.thurston_type()," | ",char," | ",lowest_deg_coeff(d)," |")
+print(count_pos,count_neg,count_pos + count_neg)
