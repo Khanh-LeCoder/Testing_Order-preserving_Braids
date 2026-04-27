@@ -25,5 +25,7 @@ def braid_semigroup_ball(radius,strands):
       braid_ball.append(word)
   return braid_ball
 
-for braid in braid_semigroup_ball(2,4):
+for word in braid_semigroup_ball(2,4):
+  B = BraidGroup(4)
+  braid = B(word)
   print(char_poly(braid.burau_matrix(var= 't',reduced =True)))
