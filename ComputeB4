@@ -1,1 +1,4 @@
 B = BraidGroup(4)
+
+def free_semigroup_ball(radius):
+
