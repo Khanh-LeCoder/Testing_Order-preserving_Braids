@@ -4,8 +4,8 @@ def free_semigroup_sphere(radius,rank):
   else:
     previous_sphere = free_semigroup_sphere(radius-1,rank)
     for word in previous_sphere:
-        sphere.extend([word + [letter + 1] for letter in range(rank)])
-        return sphere
+        new_sphere.extend([word + [letter + 1] for letter in range(rank)])
+        return new_sphere
 
 def free_semigroup_ball(radius,rank):
   ball = []
