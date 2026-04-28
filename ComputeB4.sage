@@ -9,6 +9,15 @@ def char_poly(laurent_poly_matrix):
 	A = clear_denominators(laurent_poly_matrix)
 	return A.characteristic_polynomial()
 
+def lowest_deg_coeff(univar_rat_func):
+	L.<t> = FunctionField(QQ)
+	if univar_rat_func == 0:
+		return 0
+	else:
+		min_deg = univar_rat_func.valuation('t')
+		pole_removed = (univar_rat_func * t^(-min_deg)).element()
+		return pole_removed(0)
+
 def free_semigroup_sphere(radius,rank):
   if radius == 0:
     return [[]]
