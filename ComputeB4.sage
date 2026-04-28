@@ -1,3 +1,14 @@
+def clear_denominators(laurent_poly_matrix):
+	A = laurent_poly_matrix
+	L.<t> = FunctionField(QQ)
+	min_exp = min(e.polynomial_construction()[1] for e in A.list())
+	B = (t**-min_exp) * A
+	return B.change_ring(L)
+
+def char_poly(laurent_poly_matrix):
+	A = clear_denominators(laurent_poly_matrix)
+	return A.characteristic_polynomial()
+
 def free_semigroup_sphere(radius,rank):
   if radius == 0:
     return [[]]
