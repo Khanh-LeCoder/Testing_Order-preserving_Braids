@@ -27,7 +27,7 @@ def braid_semigroup_ball(radius,strands):
 
 count_pos = 0
 count_neg = 0
-for word in braid_semigroup_ball(8,4):
+for word in braid_semigroup_ball(1,4):
   B = BraidGroup(4)
   braid = B(word)
   char = char_poly(braid.burau_matrix(var= 't',reduced =True))
