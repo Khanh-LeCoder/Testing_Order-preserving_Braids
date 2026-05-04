@@ -1,3 +1,5 @@
+| Index | Cumulative positive count | Braid | Type | Characteristic Polynomial | Sign of Discriminant | 
+|---|---|---|---|---|---|
 |  1  |  1  |  s0  |  reducible  |  x^2 + (t - 1)*x - t  |  1  |
 |  2  |  2  |  s1  |  reducible  |  x^2 + (t - 1)*x - t  |  1  |
 |  3  |  3  |  s0^2  |  reducible  |  x^2 + (-t^2 - 1)*x + t^2  |  1  |
