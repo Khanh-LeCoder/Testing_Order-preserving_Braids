@@ -49,8 +49,9 @@ count_pos = 0
 count_neg = 0
 word_length = 1
 count = 0 
-for word in braid_semigroup_ball(word_length,4):
-  B = BraidGroup(4)
+rank = 3
+for word in braid_semigroup_ball(word_length,rank):
+  B = BraidGroup(rank)
   braid = B(word)
   char = char_poly(braid.burau_matrix(var= 't',reduced =True))
   d = char.discriminant()
